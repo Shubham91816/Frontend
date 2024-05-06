@@ -23,7 +23,7 @@ const Assignment = () => {
     setLoading(false);
     setErrorLoading(false);
     try {
-      const baseUrl = "http://localhost:8000/configurations/";
+      const baseUrl = "http://localhost:8080/configurations/";
       const url = baseUrl + inputValue;
       const result = await fetch(url);
       const res = await result.json();
@@ -58,7 +58,7 @@ const Assignment = () => {
       remark: inputRemark,
     };
     try {
-      const baseUrl = "http://localhost:8000/configurations/";
+      const baseUrl = "http://localhost:8080/configurations/";
       const url = baseUrl + inputConfig;
         const result = await fetch(url, {
         method: "PUT",
@@ -96,7 +96,7 @@ const Assignment = () => {
 
         {loading && (
           <div style={{ marginTop: 10 }}>
-            <h4> Result : http://localhost:8000/configurations/{inputValue}</h4>
+            <h4> Result : http://localhost:8080/configurations/{inputValue}</h4>
 
             {response.map((values, index) => (
               <div key={index}>{values.join(" ")}</div>
@@ -124,7 +124,7 @@ const Assignment = () => {
 
         {
           updateResponse && <div>
-            <h4> PUT : http://localhost:8000/configurations/{inputConfig}</h4>
+            <h4> PUT : http://localhost:8080/configurations/{inputConfig}</h4>
             <p>Success</p>
           </div>
         }
